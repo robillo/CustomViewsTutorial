@@ -17,6 +17,9 @@ import android.view.View;
 
 public class MyCustomView extends View{
 
+    Paint mPaint;
+    Rect mRect;
+
     public MyCustomView(Context context) {
         super(context);
         init(null);
@@ -39,20 +42,19 @@ public class MyCustomView extends View{
     }
 
     private void init(@Nullable AttributeSet set){
-
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint.setColor(Color.MAGENTA);
+        mRect = new Rect();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.MAGENTA);
-        Rect rect = new Rect();
-        rect.left = 0;
-        rect.right = getWidth();
-        rect.top = 0;
-        rect.bottom = getHeight();
+        mRect.left = 0;
+        mRect.right = getWidth();
+        mRect.top = 0;
+        mRect.bottom = getHeight();
 
-        canvas.drawRect(rect, paint);
+        canvas.drawRect(mRect, mPaint);
     }
 }
