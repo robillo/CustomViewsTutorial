@@ -1,6 +1,7 @@
 package com.robillo.customviewstutorial;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -19,6 +20,7 @@ public class MyCustomView extends View{
 
     Paint mPaint;
     Rect mRect;
+    int mSquareColor;
 
     public MyCustomView(Context context) {
         super(context);
@@ -43,8 +45,16 @@ public class MyCustomView extends View{
 
     private void init(@Nullable AttributeSet set){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(Color.MAGENTA);
         mRect = new Rect();
+
+        if(set == null){
+            return;
+        }
+
+        TypedArray ta = getContext().obtainStyledAttributes(set, R.styleable.MyCustomView);
+        mSquareColor = ta.getColor(R.styleable.MyCustomView_square_color, Color.GREEN);
+        mPaint.setColor(mSquareColor);
+        ta.recycle();
     }
 
     @Override

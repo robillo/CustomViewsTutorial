@@ -9,6 +9,7 @@
 
     <com.robillo.customviewstutorial.MyCustomView
         android:layout_width="300sp"
-        android:layout_height="300sp" />
+        android:layout_height="300sp"
+        app:square_color="@color/colorPrimary"/>
 
 </LinearLayout>
