@@ -5,11 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.robillo.customviewstutorial.MainActivity">
 
     <com.robillo.customviewstutorial.MyCustomView
         android:layout_width="300sp"
-        android:layout_height="300sp"
-        app:square_color="@color/colorPrimary"/>
+        android:layout_height="0sp"
+        app:square_color="@color/colorPrimary"
+        android:layout_weight="1"
+        android:layout_margin="5sp"
+        android:id="@+id/mcv"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/one"
+            android:onClick="onClick"
+            style="?android:attr/buttonBarStyle"
+            android:background="?attr/selectableItemBackground"
+            android:text="CUSTOM PADDING +"/>
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/two"
+            android:onClick="onClick"
+            style="?android:attr/buttonBarStyle"
+            android:background="?attr/selectableItemBackground"
+            android:text="SWAP COLOR"/>
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/three"
+            android:onClick="onClick"
+            style="?android:attr/buttonBarStyle"
+            android:background="?attr/selectableItemBackground"
+            android:text="CUSTOM PADDING -"/>
+
+    </LinearLayout>
 
 </LinearLayout>
