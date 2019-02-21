@@ -37,7 +37,13 @@ class MainActivity : AppCompatActivity() {
     private fun incrementPadding(amount: Int) {
         val isChanged = myCustomView.paddingUp(amount)
         if(!isChanged)
-            showSnackBar("Padding bounds exceed dimensions.")
+            showSnackBar(getString(R.string.bounds_exceeding))
+    }
+
+    private fun decrementPadding(amount: Int) {
+        val isChanged = myCustomView.paddingDown(amount)
+        if(!isChanged)
+            showSnackBar(getString(R.string.bounds_exceeding))
     }
 
     private fun showSnackBar(text: String) {
@@ -45,11 +51,5 @@ class MainActivity : AppCompatActivity() {
         val view = snackbar.getView()
         view.setBackgroundColor(ContextCompat.getColor(this, R.color.red_color))
         snackbar.show()
-    }
-
-    private fun decrementPadding(amount: Int) {
-        val isChanged = myCustomView.paddingDown(amount)
-        if(!isChanged)
-            showSnackBar("Padding bounds exceed dimensions.")
     }
 }

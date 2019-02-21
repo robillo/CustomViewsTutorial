@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CustomViewsTutorial</string>
+    <string name="android_custom_view">ANDROID CUSTOM VIEW</string>
+    <string name="decrement_padding">DECREMENT PADDING</string>
+    <string name="swap_color">SWAP COLOR</string>
+    <string name="increment_padding">INCREMENT PADDING</string>
+    <string name="bounds_exceeding">Padding bounds exceed dimensions.</string>
 </resources>
