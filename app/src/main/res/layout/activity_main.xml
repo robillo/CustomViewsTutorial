@@ -39,7 +39,7 @@
                 android:layout_width="200sp"
                 android:layout_height="200sp"
                 android:layout_gravity="center"
-                app:square_color="@color/colorPrimary"
+                app:square_color="@color/colorPrimaryLight"
                 android:id="@+id/mcv"/>
 
         </FrameLayout>
@@ -47,7 +47,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="2sp"
-            android:background="@color/light_grey_color"/>
+            android:background="@color/light_grey_color"
+            tools:ignore="ContentDescription,SmallSp" />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -77,14 +78,16 @@
                         style="?android:attr/buttonBarStyle"
                         android:background="?attr/selectableItemBackground"
                         android:text="@string/increment_padding"
-                        android:fontFamily="serif-monospace"/>
+                        android:fontFamily="serif-monospace"
+                        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
                 </android.support.v7.widget.CardView>
 
                 <ImageView
                     android:layout_width="2sp"
                     android:layout_height="match_parent"
-                    android:background="@color/light_grey_color"/>
+                    android:background="@color/light_grey_color"
+                    tools:ignore="ContentDescription" />
 
                 <android.support.v7.widget.CardView
                     android:layout_width="0sp"
@@ -104,14 +107,16 @@
                         style="?android:attr/buttonBarStyle"
                         android:background="?attr/selectableItemBackground"
                         android:text="@string/swap_color"
-                        android:fontFamily="serif-monospace"/>
+                        android:fontFamily="serif-monospace"
+                        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
                 </android.support.v7.widget.CardView>
 
                 <ImageView
                     android:layout_width="2sp"
                     android:layout_height="match_parent"
-                    android:background="@color/light_grey_color"/>
+                    android:background="@color/light_grey_color"
+                    tools:ignore="ContentDescription" />
 
                 <android.support.v7.widget.CardView
                     android:layout_width="0sp"
@@ -131,7 +136,8 @@
                         style="?android:attr/buttonBarStyle"
                         android:background="?attr/selectableItemBackground"
                         android:text="@string/decrement_padding"
-                        android:fontFamily="serif-monospace"/>
+                        android:fontFamily="serif-monospace"
+                        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
                 </android.support.v7.widget.CardView>
 

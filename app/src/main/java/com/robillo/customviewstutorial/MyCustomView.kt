@@ -12,6 +12,7 @@ class MyCustomView : View {
 
     private val VIEW_CHANGED = true
     private val VIEW_NOT_CHANGED = false
+    private val DEFAULT_COLOR = Color.DKGRAY
 
     private lateinit var mPaint: Paint
     private lateinit var mRect: Rect
@@ -42,13 +43,13 @@ class MyCustomView : View {
         mRect = Rect()
 
         val typedArray = context.obtainStyledAttributes(set, R.styleable.MyCustomView)
-        mSquareColor = typedArray.getColor(R.styleable.MyCustomView_square_color, Color.GREEN)
+        mSquareColor = typedArray.getColor(R.styleable.MyCustomView_square_color, DEFAULT_COLOR)
         mPaint.color = mSquareColor
         typedArray.recycle()
     }
 
     fun swapColor() {
-        mPaint.color = if (mPaint.color == mSquareColor) Color.RED else mSquareColor
+        mPaint.color = if (mPaint.color == mSquareColor) Color.CYAN else mSquareColor
         postInvalidate()
     }
 
