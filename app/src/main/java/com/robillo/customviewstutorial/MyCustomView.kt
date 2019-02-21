@@ -10,6 +10,9 @@ import android.view.View
 
 class MyCustomView : View {
 
+    private val VIEW_CHANGED = true
+    private val VIEW_NOT_CHANGED = false
+
     private lateinit var mPaint: Paint
     private lateinit var mRect: Rect
 
@@ -49,14 +52,34 @@ class MyCustomView : View {
         postInvalidate()
     }
 
-    fun paddingUp(padding: Int) {
-        mPadding += padding
-        refresh()
+    fun paddingUp(padding: Int): Boolean {
+        if(isPaddingWithinBounds(mPadding + padding)) {
+            mPadding += padding
+            refresh()
+            return VIEW_CHANGED
+        }
+        return VIEW_NOT_CHANGED
     }
 
-    fun paddingDown(padding: Int) {
-        mPadding -= padding
-        refresh()
+    fun paddingDown(padding: Int): Boolean {
+        if(isPaddingWithinBounds(mPadding - padding)) {
+            mPadding -= padding
+            refresh()
+            return VIEW_CHANGED
+        }
+        return VIEW_NOT_CHANGED
+    }
+
+    private fun isPaddingWithinBounds(padding: Int): Boolean {
+        return checkBoundsForPaddingUp(padding) && checkBoundsForPaddingDown(padding)
+    }
+
+    private fun checkBoundsForPaddingUp(padding: Int): Boolean {
+        return (originX + padding < width - padding) && (originY + padding < height - padding)
+    }
+
+    private fun checkBoundsForPaddingDown(padding: Int): Boolean {
+        return (padding > 0)
     }
 
     private fun refresh() {

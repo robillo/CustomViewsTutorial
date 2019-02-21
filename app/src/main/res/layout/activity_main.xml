@@ -1,56 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    tools:context="com.robillo.customviewstutorial.MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context="com.robillo.customviewstutorial.MainActivity">
-
-    <com.robillo.customviewstutorial.MyCustomView
-        android:layout_width="300sp"
-        android:layout_height="0sp"
-        app:square_color="@color/colorPrimary"
-        android:layout_weight="1"
-        android:layout_margin="5sp"
-        android:id="@+id/mcv"/>
+    android:id="@+id/coordinatorLayout">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <Button
-            android:layout_width="0sp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:id="@+id/increment_padding"
-            android:onClick="onClick"
-            style="?android:attr/buttonBarStyle"
-            android:background="?attr/selectableItemBackground"
-            android:text="CUSTOM PADDING +"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1">
 
-        <Button
-            android:layout_width="0sp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:id="@+id/swap_color"
-            android:onClick="onClick"
-            style="?android:attr/buttonBarStyle"
-            android:background="?attr/selectableItemBackground"
-            android:text="SWAP COLOR"/>
+            <com.robillo.customviewstutorial.MyCustomView
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center"
+                app:square_color="@color/colorPrimary"
+                android:id="@+id/mcv"/>
 
-        <Button
-            android:layout_width="0sp"
-            android:layout_weight="1"
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/decrement_padding"
-            android:onClick="onClick"
-            style="?android:attr/buttonBarStyle"
-            android:background="?attr/selectableItemBackground"
-            android:text="CUSTOM PADDING -"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/increment_padding"
+                android:onClick="onClick"
+                style="?android:attr/buttonBarStyle"
+                android:background="?attr/selectableItemBackground"
+                android:text="CUSTOM PADDING +"/>
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/swap_color"
+                android:onClick="onClick"
+                style="?android:attr/buttonBarStyle"
+                android:background="?attr/selectableItemBackground"
+                android:text="SWAP COLOR"/>
+
+            <Button
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/decrement_padding"
+                android:onClick="onClick"
+                style="?android:attr/buttonBarStyle"
+                android:background="?attr/selectableItemBackground"
+                android:text="CUSTOM PADDING -"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
